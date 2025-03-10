@@ -479,6 +479,8 @@ xgb = XGBRegressor(**xgb_params)
 xgb.fit(X_train, np.log(y))
 predictions = np.exp(xgb.predict(X_test))
 
-output = pd.DataFrame({'Id': X_test.index, 'SalePrice': predictions}git )
+output = pd.DataFrame({'Id': X_test.index, 'SalePrice': predictions})
 output.to_csv('my_submission.csv', index=False)
 print("Your submission was successfully saved!")
+
+plt.show()
